@@ -12,6 +12,7 @@ import {
 } from "chart.js";
 import { Bar, Line } from "react-chartjs-2";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 // Register necessary components from Chart.js
 ChartJS.register(
@@ -61,17 +62,41 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-gray-100 overflow-hidden">
+    <div className="flex flex-col md:flex-row h-screen bg-gray-300 overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-full md:w-1/6 bg-white p-5 flex md:flex-col flex-row gap-4">
-        <Link className="text-xl font-bold" to="/dashboard">Dashboard</Link>
-        <Link className="text-xl font-bold" to={'/'}>Home</Link>
-        <Link className="text-xl font-bold" to={'/dashboard/add-product'}>Add Product</Link>
-        <Link className="text-xl font-bold" to={'/dashboard/payment'}>Amount Page</Link>
-        <Link className="text-xl font-bold" to={'/dashboard/order-list'}>Order List</Link>
-        <Link className="text-xl font-bold" to={'/dashboard/stock'}>Stock</Link>
-        <Link className="text-xl font-bold" to={'/dashboard/order-list'}>Order List</Link> 
-        <Link className="text-xl font-bold" to={'/dashboard/service-over-view'}>Service Over View</Link> 
+      <aside className="w-full md:w-1/6 bg-[#9ae17b] p-5 flex md:flex-col flex-row gap-4">
+        {/* <Link className="text-xl font-bold" to="/dashboard">Dashboard</Link> */}
+        <Link className="text-xl font-bold bg-white rounded-md p-2" to={'/'}>Back Home</Link>
+        {/* Add Products Route */}
+        <div className="flex  items-center gap-3 bg-orange-400 rounded-md p-2">
+          <Link className="text-md font-bold " to={'/dashboard/add-product'}>Add Product</Link>
+          <FaArrowRight />
+        </div>
+        {/* amount route */}
+        <div className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <Link className="text-md font-bold" to={'/dashboard/payment'}>Amount Page</Link>
+          <FaArrowRight />
+        </div>
+        {/* Order List route */}
+        <div className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <Link className="text-md font-bold" to={'/dashboard/order-list'}>Order List</Link>
+          <FaArrowRight />
+        </div>
+        {/* Stocks Route */}
+        <div className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <Link className="text-md font-bold" to={'/dashboard/stock'}>Stock</Link>
+          <FaArrowRight />
+        </div>
+        {/* Order List Route */}
+        <div className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <Link className="text-md font-bold" to={'/dashboard/order-list'}>Order List</Link>
+          <FaArrowRight />
+        </div>
+        {/* Service over view Route */}
+        <div className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <Link className="text-md font-bold" to={'/dashboard/service-over-view'}>Service Over View</Link>
+          <FaArrowRight />
+        </div>
         {/* Sidebar items */}
       </aside>
 

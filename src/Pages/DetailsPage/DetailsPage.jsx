@@ -1,15 +1,15 @@
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import img1 from "../assets/details/s-l1600 (1).webp";
-import img2 from "../assets/details/s-l1600 (2).webp";
-import img3 from "../assets/details/s-l1600.webp";
+import img1 from "../../../public/Login-background.jpg";
+import img2 from "../../../public/login.png";
+import img3 from "../../../public/logo.png";
 import { FaStar } from "react-icons/fa";
-import "./Custom.css"
+// import "./Custom.css"
 
 
 
 
-const Details = () => {
+const DetailsPage = () => {
   const images = [
     {
       original: img1,
@@ -92,4 +92,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default DetailsPage;

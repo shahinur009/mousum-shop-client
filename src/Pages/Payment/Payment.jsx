@@ -2,8 +2,8 @@
 
 
 
-import bkash from "../assets/bkash.png";
-import nogod from "../assets/nogod.png";
+import bkash from "../../../public/Payment Image/bkash.png";
+import nogod from "../../../public/Payment Image/Navad.png";
 import { useState } from "react";
 import axios from "axios";
 

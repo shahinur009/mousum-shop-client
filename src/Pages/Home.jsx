@@ -1,8 +1,13 @@
+import Banner from "../Components/Banner";
+import Categories from "../Components/Categories";
+import HomeProducts from "../Components/HomeProducts";
 
 const Home = () => {
     return (
         <div>
-            Kmn aso
+            <Banner />
+            <Categories />
+            <HomeProducts/>
         </div>
     );
 };

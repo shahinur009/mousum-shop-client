@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import logo from '../../../public/logo.png';
-import { PiShoppingCartSimpleBold } from "react-icons/pi";
-import { FiSearch } from "react-icons/fi";  // Search icon added for input field
-import { CiSearch } from "react-icons/ci";  // Search icon for button
+import logo from '../../public/logo.png';
 import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
+import { CiSearch } from "react-icons/ci";
+import { PiShoppingCartSimpleBold } from "react-icons/pi";
 
-const Navbar = () => {
+
+const DashboardNavBar = () => {
     const { user, logOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
@@ -19,11 +19,11 @@ const Navbar = () => {
         <>
             <div className="flex items-center justify-between shadow-md bg-[#dc590d] px-4 py-2">
                 {/* Logo Section */}
-                <Link to='/' className="flex items-center justify-center">
+                <Link to='/dashboard' className="flex items-center justify-center">
                     <img src={logo} alt="logo" className="w-24 h-20 bg-[#dc590d]" />
-                    <h1 className="text-white font-bold md:text-4xl">AirePro</h1>
+                    <h1 className="text-white font-bold md:text-4xl">Dashboard </h1>
                 </Link>
-                <Link to='/dashboard' className="btn btn-warning">Dashboard</Link>
+                <Link to='/' className="btn btn-success ml-5">Home</Link>
 
                 {/* Search and Right Section */}
                 <div className="flex items-center flex-grow max-w-[70%] mx-4"> {/* Flex container for alignment */}
@@ -61,4 +61,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default DashboardNavBar;
