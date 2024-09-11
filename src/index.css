@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* detail css */
+.custom-gallery .image-gallery-left-nav .image-gallery-svg,
+.custom-gallery .image-gallery-right-nav .image-gallery-svg {
+    height: 30px;
+    width: 30px;
+ 
+}
+
+
+.custom-gallery .image-gallery-thumbnail .image-gallery-thumbnail-image {
+    vertical-align: middle;
+    width: 100%;
+    line-height: 0;
+    background-color: #b91a1ae5; 
+}
+
+.custom-gallery .image-gallery-content.image-gallery-thumbnails-left .image-gallery-slide .image-gallery-image{
+         background-color: bisque;
+}
