@@ -6,9 +6,9 @@ import { Navigation } from "swiper/modules";
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa';
 // images
 import img1 from '../../public/Banner Imag/1.jpg';
-// import img2 from '../../public/Banner Imag/2.jpg';
+import img2 from '../../public/Banner Imag/2.jpg';
 import img3 from '../../public/Banner Imag/3.jpg';
-// import img4 from '../../public/Banner Imag/4.jpg';
+import img4 from '../../public/Banner Imag/4.jpg';
 import img5 from '../../public/Banner Imag/5.jpg';
 
 const Banner = () => {
@@ -45,26 +45,10 @@ const Banner = () => {
               </button>
             </div>
             <div className="md:w-[70%] w-full">
-              <img className="object-cover w-full h-full" src={img1} alt="slide images" />
+              <img className="object-cover w-full md:h-[361px] h-[210px]" src={img1} alt="slide images" />
             </div>
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <div className="flex md:flex-row flex-col w-full h-auto text-[#2A0303]">
-            <div className="md:w-[30%] w-full bg-[#F02D2D] md:px-16 px-8 md:py-4 py-2 space-y-4 flex flex-col justify-center">
-              <h1 className="md:text-3xl text-2xl font-bold leading-tight">
-                The right sneakers to pave your way
-              </h1>
-              <p className="text-lg">Explore a variety of unique cards on eBay.</p>
-              <button className="border-[1px] border-[#2A0303] rounded-3xl px-[17px] py-[10px] text-base hover:bg-[#2A0303] hover:text-[#F02D2D]">
-                Shop Now
-              </button>
-            </div>
-            <div className="md:w-[70%] w-full">
-              <img className="object-cover w-full h-full" src={img2} alt="slide images" />
-            </div>
-          </div>
-        </SwiperSlide> */}
         <SwiperSlide>
           <div className="flex md:flex-row flex-col w-full h-auto text-[#2A0303]">
             <div className="md:w-[30%] w-full bg-[#F02D2D] md:px-16 px-8 md:py-4 py-2 space-y-4 flex flex-col justify-center">
@@ -77,26 +61,10 @@ const Banner = () => {
               </button>
             </div>
             <div className="md:w-[70%] w-full">
-              <img className="object-cover w-full h-full" src={img3} alt="slide images" />
+              <img className="object-cover w-full md:h-[361px] h-[210px]" src={img2} alt="slide images" />
             </div>
           </div>
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <div className="flex md:flex-row flex-col w-full h-auto text-[#2A0303]">
-            <div className="md:w-[30%] w-full bg-[#F02D2D] md:px-16 px-8 md:py-4 py-2 space-y-4 flex flex-col justify-center">
-              <h1 className="md:text-3xl text-2xl font-bold leading-tight">
-                The right sneakers to pave your way
-              </h1>
-              <p className="text-lg">Explore a variety of unique cards on eBay.</p>
-              <button className="border-[1px] border-[#2A0303] rounded-3xl px-[17px] py-[10px] text-base hover:bg-[#2A0303] hover:text-[#F02D2D]">
-                Shop Now
-              </button>
-            </div>
-            <div className="md:w-[70%] w-full">
-              <img className="object-cover w-full h-full" src={img4} alt="slide images" />
-            </div>
-          </div>
-        </SwiperSlide> */}
         <SwiperSlide>
           <div className="flex md:flex-row flex-col w-full h-auto text-[#2A0303]">
             <div className="md:w-[30%] w-full bg-[#F02D2D] md:px-16 px-8 md:py-4 py-2 space-y-4 flex flex-col justify-center">
@@ -109,7 +77,39 @@ const Banner = () => {
               </button>
             </div>
             <div className="md:w-[70%] w-full">
-              <img className="object-cover w-full h-full" src={img5} alt="slide images" />
+              <img className="object-cover w-full md:h-[361px] h-[210px]" src={img3} alt="slide images" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex md:flex-row flex-col w-full h-auto text-[#2A0303]">
+            <div className="md:w-[30%] w-full bg-[#F02D2D] md:px-16 px-8 md:py-4 py-2 space-y-4 flex flex-col justify-center">
+              <h1 className="md:text-3xl text-2xl font-bold leading-tight">
+                The right sneakers to pave your way
+              </h1>
+              <p className="text-lg">Explore a variety of unique cards on eBay.</p>
+              <button className="border-[1px] border-[#2A0303] rounded-3xl px-[17px] py-[10px] text-base hover:bg-[#2A0303] hover:text-[#F02D2D]">
+                Shop Now
+              </button>
+            </div>
+            <div className="md:w-[70%] w-full md:h-[361px] h-[210px]">
+              <img className="object-cover w-full md:h-[361px] h-[210px]" src={img4} alt="slide images" />
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex md:flex-row flex-col w-full h-auto text-[#2A0303]">
+            <div className="md:w-[30%] w-full bg-[#F02D2D] md:px-16 px-8 md:py-4 py-2 space-y-4 flex flex-col justify-center">
+              <h1 className="md:text-3xl text-2xl font-bold leading-tight">
+                The right sneakers to pave your way
+              </h1>
+              <p className="text-lg">Explore a variety of unique cards on eBay.</p>
+              <button className="border-[1px] border-[#2A0303] rounded-3xl px-[17px] py-[10px] text-base hover:bg-[#2A0303] hover:text-[#F02D2D]">
+                Shop Now
+              </button>
+            </div>
+            <div className="md:w-[70%] w-full">
+              <img className="object-cover w-full md:h-[361px] h-[210px]" src={img5} alt="slide images" />
             </div>
           </div>
         </SwiperSlide>
