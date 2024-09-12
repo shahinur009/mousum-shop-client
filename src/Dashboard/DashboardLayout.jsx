@@ -1,11 +1,13 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
+import { Link, Outlet } from 'react-router-dom';
 import DashboardNavBar from './DashboardNavBar';
+// import DashboardNavBar from './DashboardNavBar';
 
 const DashboardLayout = () => {
     return (
         <div>
-            <DashboardNavBar />
+            <DashboardNavBar/>
             <Outlet></Outlet>
         </div>
     );

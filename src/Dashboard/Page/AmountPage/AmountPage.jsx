@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import bg from '../../../../public/Login-background.jpg'
+
 
 const AmountPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,8 +37,10 @@ const AmountPage = () => {
   };
 
   return (
-    <section className="px-4 mx-auto">
-      <div className="flex flex-col mb-6">
+    <section style={{ backgroundImage: `url(${bg})` }} className="px-4 mx-auto bg-cover bg-center min-h-screen w-full bg-white p-6 flex rounded-lg shadow-md items-center">
+
+      <div className="flex flex-col mx-auto h-full w-full md:-mt-56">
+        <h1 className='text-md md:text-3xl font-extrabold mx-auto uppercase -mt-5 p-5'>Payment Summary</h1>
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
             <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
@@ -55,7 +59,7 @@ const AmountPage = () => {
                   {currentOrders.map((order, index) => (
                     <tr key={order.id}>
                       <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                        #{indexOfFirstOrder + index + 1}
+                        {indexOfFirstOrder + index + 1}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         {order.totalAmount}

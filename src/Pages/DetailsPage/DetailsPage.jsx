@@ -1,8 +1,13 @@
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import img1 from "../../../public/Login-background.jpg";
-import img2 from "../../../public/login.png";
-import img3 from "../../../public/logo.png";
+import bg from "../../../public/Login-background.jpg";
+import img1 from "../../../public/Product Image/1 (1).jpeg";
+import img2 from "../../../public/Product Image/1 (2).jpeg";
+import img3 from "../../../public/Product Image/1 (3).jpeg";
+import img4 from "../../../public/Product Image/1 (4).jpeg";
+import img5 from "../../../public/Product Image/1 (5).jpeg";
+import img6 from "../../../public/Product Image/1 (6).jpeg";
+
 import { FaStar } from "react-icons/fa";
 // import "./Custom.css"
 
@@ -23,10 +28,22 @@ const DetailsPage = () => {
       original: img3,
       thumbnail: img3,
     },
+    {
+      original: img4,
+      thumbnail: img4,
+    },
+    {
+      original: img5,
+      thumbnail: img5,
+    },
+    {
+      original: img6,
+      thumbnail: img6,
+    },
   ];
 
   return (
-    <div className="flex flex-col md:flex-row justify-between p-4 max-w-6xl mx-auto">
+    <div style={{ backgroundImage: `url(${bg})` }} className="bg-cover bg-center flex flex-col md:flex-row justify-between p-8 mx-auto">
       {/* Image Section */}
       <div className="w-full md:w-1/2 flex justify-center">
         <ImageGallery
@@ -35,8 +52,8 @@ const DetailsPage = () => {
           items={images}
           showThumbnails={true}
           additionalClass="custom-gallery"
-          
-          
+
+
         />
       </div>
 
@@ -82,11 +99,11 @@ const DetailsPage = () => {
         <button className="mt-4 px-4 ml-2 py-2 font-semibold text-white  rounded bg-blue-600  hover:bg-blue-800 ">
           Sell one like this
         </button>
-       
-        <button className="mt-4 px-4 ml-2 py-2 font-semibold text-white  rounded bg-blue-600  hover:bg-blue-800 ">
+
+        <button className="mt-4 px-4 ml-2 py-2 font-semibold text-white  rounded bg-[#f57224]  hover:bg-[#963a05] transition-all duration-500">
           Buy Now
         </button>
-     
+
       </div>
     </div>
   );

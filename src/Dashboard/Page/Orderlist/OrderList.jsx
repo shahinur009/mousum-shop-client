@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import bg from '../../../../public/Login-background.jpg'
 
 const OrderList = () => {
   const orders = [
@@ -38,8 +39,9 @@ const OrderList = () => {
   };
 
   return (
-    <section className="px-4 mx-auto">
-      <h1 className="text-3xl font-bold text-center py-5">Order List</h1>
+    <section style={{ backgroundImage: `url(${bg})` }} className="px-4 mx-auto bg-cover bg-center min-h-screen w-full bg-white">
+      <h1 className="text-3xl font-bold text-center py-5 uppercase">Order List</h1>
+      <div>
       <div className="flex flex-col">
         <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -71,7 +73,7 @@ const OrderList = () => {
                   {currentOrders.map((order) => (
                     <tr key={order.id}>
                       <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                        #{order.id}
+                        {order.id}
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
                         {order.date}
@@ -119,6 +121,7 @@ const OrderList = () => {
             Next
           </button>
         </div>
+      </div>
       </div>
     </section>
   );

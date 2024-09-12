@@ -7,7 +7,6 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Dashboard from "../Dashboard/Dashboard";
-import ServiceOverview from "../Dashboard/Page/ServiceOverView/ServiceOverView";
 import AddProduct from "../Dashboard/Page/AddProduct/AddProduct";
 import ProductsStock from "../Dashboard/Page/ProductStock/ProductsStock";
 import OrderList from "../Dashboard/Page/Orderlist/OrderList";
@@ -49,10 +48,6 @@ export const router = createBrowserRouter([
                 path: '/all-products',
                 element: <AllProducts />
             },
-            {
-                path: '/contact',
-                element: <AmountPage />
-            }
         ]
     },
     {
@@ -80,10 +75,7 @@ export const router = createBrowserRouter([
                 path: 'payment',
                 element: <AmountPage />
             },
-            {
-                path: 'service-over-view',
-                element: <ServiceOverview />
-            },
+            
 
         ]
 

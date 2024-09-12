@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import bg from '../../../../public/Login-background.jpg'
 
 const ProductsStock = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -45,9 +46,10 @@ const ProductsStock = () => {
     };
 
     return (
-        <section className="container px-4 mx-auto">
+        <section style={{ backgroundImage: `url(${bg})` }} className="px-4 mx-auto bg-cover bg-center min-h-screen w-full bg-white">
             <div className="flex flex-col mb-6">
                 {/* Filter by Category */}
+                <h1 className='text-md md:text-3xl font-extrabold mx-auto uppercase p-5'>All Stock Summary</h1>
                 <div className="mb-4">
                     <label className="mr-2 font-medium text-gray-700">Filter by Category:</label>
                     <select

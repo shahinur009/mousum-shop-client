@@ -24,7 +24,7 @@ const CheckOut = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-lg mx-auto p-4 bg-white rounded-lg shadow-lg"
+      className="max-w-lg mx-auto p-4 bg-[#F7F7EB] rounded-lg shadow-2xl border-amber-200 border"
     >
       <h2 className="text-lg font-semibold text-center mb-4">
         ক্যাশ অন ডেলিভারিতে অর্ডার করতে আপনার তথ্য দিন
@@ -187,12 +187,12 @@ const CheckOut = () => {
 
       {/* Submit Button */}
       <div className="mt-6">
-        <button
+        {/* <button
           type="submit"
           className="w-full bg-orange-500 text-white py-2 rounded-md font-semibold hover:bg-orange-600"
         >
           Order Conform
-        </button>
+        </button> */}
       </div>
     </form>
   );

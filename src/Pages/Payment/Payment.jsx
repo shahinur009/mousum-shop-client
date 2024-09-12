@@ -5,6 +5,7 @@
 import bkash from "../../../public/Payment Image/bkash.png";
 import nogod from "../../../public/Payment Image/Navad.png";
 import { useState } from "react";
+import bg from '../../../public/Login-background.jpg'
 import axios from "axios";
 import CheckOut from "../../Components/CheckOut";
 
@@ -61,11 +62,11 @@ const Payment = () => {
 
     return (
 
-        <div className="max-w-screen-xl justify-center gap-10 mx-auto mt-8 p-4 flex">
-            <div>
+        <div style={{ backgroundImage: `url(${bg})` }} className='bg-cover bg-center min-h-screen md:flex items-center justify-center md:gap-10 '>
+            <div className="mb-2">
                 <CheckOut />
             </div>
-            <div>
+            <div className="shadow-2xl rounded-md p-5 border-amber-200 border">
                 <h2 className="text-2xl font-bold mb-4">Choose Your Payment Method</h2>
                 <div className="flex justify-between items-center mb-4">
                     <button
@@ -86,7 +87,7 @@ const Payment = () => {
                     </button>
                 </div>
                 <button
-                    className={`border-2 rounded-md p-2 w-full mb-4 ${paymentMethod === "cod" ? "border-green-500" : "border-gray-300"
+                    className={`border-2 rounded-md p-2 w-full mb-4 bg-[#f57224] ${paymentMethod === "cod" ? "border-green-500" : "border-gray-300"
                         }`}
                     onClick={() => handlePaymentMethodChange("cod")}
                 >
