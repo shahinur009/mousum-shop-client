@@ -1,7 +1,12 @@
 import { useState } from "react";
 import bg from '../../../../public/Login-background.jpg'
+import { toast } from "react-toastify";
+import { imageUpload } from "../../../Utilities/Utilites";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
+  const [loading, setLoading] = useState(false)
   const [product, setProduct] = useState({
     name: "",
     details: "",
@@ -22,10 +27,41 @@ const AddProduct = () => {
     setProduct({ ...product, image: e.target.files[0] });
   };
 
-  // Handle form submission 
-  const handleSubmit = (e) => {
+  const { name, details, category, stock, price } = product
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Product Data:", product);
+    try {
+      setLoading(true)
+      // upload image form imgbb
+      const image_url = await imageUpload(product.image)
+      console.log(image_url)
+      const sendingData = {
+        name,
+        image: image_url,
+        details, category, stock, price
+      }
+      const res = axios.post('http://localhost:5000/add-product', sendingData)
+      console.log(res)
+      if (res) {
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+
+        setLoading(false);
+      }
+      // error handle
+    } catch (error) {
+      console.error("Error from add product", error);
+      toast.error(error.message);
+      setLoading(false)
+    }
+
   };
 
   return (

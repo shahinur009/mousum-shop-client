@@ -12,7 +12,7 @@ import ProductsStock from "../Dashboard/Page/ProductStock/ProductsStock";
 import OrderList from "../Dashboard/Page/Orderlist/OrderList";
 import AmountPage from "../Dashboard/Page/AmountPage/AmountPage";
 import DashboardLayout from "../Dashboard/DashboardLayout";
-import AllProducts from "../Pages/AllProducts/AllProducts";
+// import AllProducts from "../Pages/AllProducts/AllProducts";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import Payment from "../Pages/Payment/Payment";
 
@@ -46,7 +46,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/all-products',
-                element: <AllProducts />
+
+                // element: <AllProducts />
             },
         ]
     },
