@@ -35,12 +35,12 @@ export const router = createBrowserRouter([
                 element: <Register />
             },
             {
-                path: '/detail',
+                path: '/detail/:id',
                 element: <DetailsPage />
 
             },
             {
-                path: '/payment',
+                path: '/payment/:id',
                 element: <Payment />
 
             },

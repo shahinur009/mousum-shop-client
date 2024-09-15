@@ -15,7 +15,7 @@ const Payment = () => {
     const [mobileNumber, setMobileNumber] = useState("");
     const [uploading, setUploading] = useState(false);
 
-    const imgbbApiKey = "Your imgbb api key"; // ImgBB API key
+    const imgbbApiKey = import.meta.env.VITE_IMGBB_API_KEY; // ImgBB API key
 
     const handlePaymentMethodChange = (method) => {
         setPaymentMethod(method);
@@ -29,23 +29,73 @@ const Payment = () => {
         setMobileNumber(e.target.value);
     };
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     if (paymentMethod || screenshot || mobileNumber) {
+    //         try {
+    //             setUploading(true);
+    //             const formData = new FormData();
+    //             formData.append("image", screenshot);
+
+    //             const response = await axios.post(
+    //                 `https://api.imgbb.com/1/upload?key=${imgbbApiKey}`,
+    //                 formData
+    //             );
+
+    //             if (response.data.success) {
+    //                 console.log("Payment method:", paymentMethod);
+    //                 console.log("Screenshot URL:", response.data.data.url);
+    //                 console.log("Mobile number:", mobileNumber);
+    //             } else {
+    //                 alert("Failed to upload the image.");
+    //             }
+    //         } catch (error) {
+    //             console.error("Error uploading the image:", error);
+    //             alert("An error occurred during image upload.");
+    //         } finally {
+    //             setUploading(false);
+    //         }
+    //     } else {
+    //         alert("Please select a payment method, upload the payment screenshot, and provide your mobile number.");
+    //     }
+    // };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (paymentMethod && screenshot && mobileNumber) {
             try {
                 setUploading(true);
                 const formData = new FormData();
                 formData.append("image", screenshot);
 
+                // Upload image to ImgBB
                 const response = await axios.post(
                     `https://api.imgbb.com/1/upload?key=${imgbbApiKey}`,
                     formData
                 );
 
                 if (response.data.success) {
-                    console.log("Payment method:", paymentMethod);
-                    console.log("Screenshot URL:", response.data.data.url);
-                    console.log("Mobile number:", mobileNumber);
+                    const imageUrl = response.data.data.url;
+
+                    // Send data to your backend
+                    const paymentData = {
+                        paymentMethod,
+                        mobileNumber,
+                        screenshotUrl: imageUrl,
+                    };
+
+                    // Assuming you're sending the data to /payment endpoint
+                    const result = await axios.post(
+                        `http://localhost:5000/payment`,
+                        paymentData
+                    );
+
+                    if (result.data.success) {
+                        alert("Payment submitted successfully!");
+                    } else {
+                        alert("Failed to submit payment.");
+                    }
                 } else {
                     alert("Failed to upload the image.");
                 }
@@ -102,7 +152,7 @@ const Payment = () => {
                             onChange={handleMobileNumberChange}
                             className="border-2 border-gray-300 rounded-md p-2 w-full"
                             placeholder="Enter your mobile number"
-                            required
+                        // required
                         />
                         <label className="block mb-2 font-semibold mt-4">Upload Payment Screenshot</label>
                         <input
@@ -110,7 +160,7 @@ const Payment = () => {
                             accept="image/*"
                             className="border-2 border-gray-300 rounded-md p-2 w-full"
                             onChange={handleFileChange}
-                            required
+                        // required
                         />
                     </div>
                 )}

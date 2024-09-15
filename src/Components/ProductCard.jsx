@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import img2 from '../../public/Banner Imag/4.jpg';
 import { FcRating } from "react-icons/fc";
 
@@ -5,7 +6,7 @@ const ProductCard = ({ item }) => {
   // console.log(item.name)
   return (
     <div>
-      <div className="bg-white shadow-md hover:shadow-lg border-b-[1px] border-r-[1px] border-l-[1px] border-t-0 border-transparent hover:border-b-[1px] hover:border-r-[1px] hover:border-l-[1px] hover:border-t-0 hover:border-gray-300 transition-shadow duration-300 p-2">
+      <Link to={`detail/${item._id}`} className="bg-white shadow-md hover:shadow-lg border-b-[1px] border-r-[1px] border-l-[1px] border-t-0 border-transparent hover:border-b-[1px] hover:border-r-[1px] hover:border-l-[1px] hover:border-t-0 hover:border-gray-300 transition-shadow duration-300 p-2">
         {/* Image Section */}
         <div>
           <img src={item?.image} alt="Product" className="w-full h-48 object-cover" />
@@ -27,7 +28,7 @@ const ProductCard = ({ item }) => {
             <FcRating />
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

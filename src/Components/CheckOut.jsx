@@ -8,17 +8,46 @@ const CheckOut = () => {
   const [shippingMethod, setShippingMethod] = useState("dhaka");
   const [coupon, setCoupon] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    // Log the form data to the console
-    console.log({
-      name,
-      phone,
-      address,
-      shippingMethod,
-      coupon,
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true)
+      // upload image form imgbb
+      const image_url = await imageUpload(product.image)
+      console.log(image_url)
+      const sendingData = {
+        name,
+        phone, address, shippingMethod, coupon
+      }
+      const res = axios.post('http://localhost:5000/add-product', sendingData)
+      console.log(res)
+      if (res) {
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error("Error from add product", error);
+      toast.error(error.message);
+      setLoading(false)
+    }
+
+
+    // // Log the form data to the console
+    // console.log({
+    //   name,
+    //   phone,
+    //   address,
+    //   shippingMethod,
+    //   coupon,
+    // });
   };
 
   return (

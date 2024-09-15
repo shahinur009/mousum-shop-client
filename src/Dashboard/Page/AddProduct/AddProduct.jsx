@@ -13,6 +13,10 @@ const AddProduct = () => {
     category: "",
     stock: "",
     price: "",
+    color: "",
+    code: "",
+    model:"",
+    brand: "",
     image: null,
   });
 
@@ -27,7 +31,7 @@ const AddProduct = () => {
     setProduct({ ...product, image: e.target.files[0] });
   };
 
-  const { name, details, category, stock, price } = product
+  const { name, details, category, stock, price, color, code, brand,model } = product
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +43,7 @@ const AddProduct = () => {
       const sendingData = {
         name,
         image: image_url,
-        details, category, stock, price
+        details, category, stock, price, color, code, brand,model
       }
       const res = axios.post('http://localhost:5000/add-product', sendingData)
       console.log(res)
@@ -110,6 +114,50 @@ const AddProduct = () => {
               type="number"
               name="stock"
               value={product.stock}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              required
+            />
+          </div>
+          <div className="''">
+            <label className="block text-gray-700">Color</label>
+            <input
+              type="text"
+              name="color"
+              value={product.color}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              required
+            />
+          </div>
+          <div className="''">
+            <label className="block text-gray-700">Product Code</label>
+            <input
+              type="text"
+              name="code"
+              value={product.code}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              required
+            />
+          </div>
+          <div className="''">
+            <label className="block text-gray-700">Brand</label>
+            <input
+              type="text"
+              name="brand"
+              value={product.brand}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              required
+            />
+          </div>
+          <div className="''">
+            <label className="block text-gray-700">Model</label>
+            <input
+              type="text"
+              name="model"
+              value={product.model}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md"
               required
