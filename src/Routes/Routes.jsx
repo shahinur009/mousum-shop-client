@@ -14,7 +14,8 @@ import AmountPage from "../Dashboard/Page/AmountPage/AmountPage";
 import DashboardLayout from "../Dashboard/DashboardLayout";
 // import AllProducts from "../Pages/AllProducts/AllProducts";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
-import Payment from "../Pages/Payment/Payment";
+import CheckoutAndPaymentForm from "../Pages/PaymentCheckOut/CheckoutAndPaymentForm ";
+// import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -41,7 +42,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/payment/:id',
-                element: <Payment />
+                element: <CheckoutAndPaymentForm />
 
             },
             {
@@ -76,7 +77,7 @@ export const router = createBrowserRouter([
                 path: 'payment',
                 element: <AmountPage />
             },
-            
+
 
         ]
 
