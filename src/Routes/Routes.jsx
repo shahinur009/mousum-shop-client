@@ -15,6 +15,7 @@ import DashboardLayout from "../Dashboard/DashboardLayout";
 // import AllProducts from "../Pages/AllProducts/AllProducts";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import CheckoutAndPaymentForm from "../Pages/PaymentCheckOut/CheckoutAndPaymentForm ";
+import Update from "../Dashboard/Page/ProductStock/Update";
 // import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path: 'stock',
                 element: <ProductsStock />
+            },
+            {
+                path: 'update/:id',
+                element: <Update />
             },
             {
                 path: 'add-product',

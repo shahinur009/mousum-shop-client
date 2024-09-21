@@ -163,7 +163,7 @@ const ProductsStock = () => {
                                                     {product.stock}
                                                 </td>
                                                 <div className="flex justify-center gap-4 items-center">
-                                                    <Link to={`/update/${product._id}`} className="btn btn-secondary">
+                                                    <Link to={`/dashboard/update/${product._id}`} className="btn btn-secondary">
                                                         Update
                                                     </Link>
                                                     <button
