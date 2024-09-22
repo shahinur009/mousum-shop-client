@@ -16,6 +16,7 @@ import DashboardLayout from "../Dashboard/DashboardLayout";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import CheckoutAndPaymentForm from "../Pages/PaymentCheckOut/CheckoutAndPaymentForm ";
 import Update from "../Dashboard/Page/ProductStock/Update";
+import OrderDetails from "../Dashboard/Page/Orderlist/OrderDetails";
 // import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
             {
                 path: 'order-list',
                 element: <OrderList />
+            },
+            {
+                path: 'order-details/:id',
+                element: <OrderDetails />
             },
             {
                 path: 'payment',

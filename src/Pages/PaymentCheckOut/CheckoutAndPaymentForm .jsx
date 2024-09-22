@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaUser, FaPhone } from "react-icons/fa";
 import axios from "axios";
 import bkash from "../../../public/Payment Image/bkash.png"
 import Nagad from "../../../public/Payment Image/Navad.png"
 import bg from "../../../public/Login-background.jpg"
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const CheckoutAndPaymentForm = () => {
-    const [name, setName] = useState("");
+    const [customerName, setCustomerName] = useState("");
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
     const [shippingMethod, setShippingMethod] = useState("dhaka");
@@ -18,6 +18,20 @@ const CheckoutAndPaymentForm = () => {
     const [paymentMobileNumber, setPaymentMobileNumber] = useState("");
     const [uploading, setUploading] = useState(false);
     const navigate = useNavigate();
+    const { id } = useParams();
+    const [SingleProduct, setSingleProduct] = useState([]);
+    const { brand, category, code, color, image, model, name, price, stock, _id } = SingleProduct
+
+    useEffect(() => {
+        const getProduct = async () => {
+            const res = await axios.get(`http://localhost:5000/singleProduct/${id}`)
+            setSingleProduct(res.data)
+        }
+        getProduct();
+    }, [])
+    console.log(SingleProduct)
+
+
     // cod
     const [cod, setCod] = useState(false)
 
@@ -50,7 +64,7 @@ const CheckoutAndPaymentForm = () => {
                 }
 
                 const paymentData = {
-                    name,
+                    customerName,
                     phone,
                     address,
                     shippingMethod,
@@ -59,7 +73,10 @@ const CheckoutAndPaymentForm = () => {
                     paymentMobileNumber,
                     screenshotUrl,
                     cod,
+                    status:'pending',
+                    product: { brand, category, code, color, image, model, name, price, stock, _id }
                 };
+                console.log(paymentData)
                 const res = await axios.post('http://localhost:5000/payment', paymentData)
                 console.log(res.data)
                 if (res) {
@@ -111,8 +128,8 @@ const CheckoutAndPaymentForm = () => {
                             id="name"
                             placeholder="আপনার নাম"
                             className="w-full focus:outline-none"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            value={customerName}
+                            onChange={(e) => setCustomerName(e.target.value)}
                         />
                     </div>
                 </div>
