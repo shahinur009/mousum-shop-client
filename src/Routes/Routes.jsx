@@ -10,15 +10,13 @@ import Dashboard from "../Dashboard/Dashboard";
 import AddProduct from "../Dashboard/Page/AddProduct/AddProduct";
 import ProductsStock from "../Dashboard/Page/ProductStock/ProductsStock";
 import OrderList from "../Dashboard/Page/Orderlist/OrderList";
-import AmountPage from "../Dashboard/Page/AmountPage/AmountPage";
 import DashboardLayout from "../Dashboard/DashboardLayout";
-// import AllProducts from "../Pages/AllProducts/AllProducts";
 import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import CheckoutAndPaymentForm from "../Pages/PaymentCheckOut/CheckoutAndPaymentForm ";
 import Update from "../Dashboard/Page/ProductStock/Update";
 import OrderDetails from "../Dashboard/Page/Orderlist/OrderDetails";
 import Banner from "../Dashboard/Page/Banner/Banner";
-// import Payment from "../Pages/Payment/Payment";
+import SalesDetails from "../Dashboard/Page/SalesDetails/SalesDetails";
 
 export const router = createBrowserRouter([
     {
@@ -85,8 +83,8 @@ export const router = createBrowserRouter([
                 element: <OrderDetails />
             },
             {
-                path: 'payment',
-                element: <AmountPage />
+                path: 'sales-details',
+                element: <SalesDetails />
             },
             {
                 path: 'banner',

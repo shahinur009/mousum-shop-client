@@ -89,8 +89,8 @@ const Dashboard = () => {
           <FaArrowRight />
         </Link>
 
-        {/* amount route */}
-        <Link to={'/dashboard/payment'} className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+        {/* Sales Details route */}
+        <Link to={'/dashboard/sales-details'} className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
           <h1 className="text-md font-bold" >Sales Details</h1>
           <FaArrowRight />
         </Link>
