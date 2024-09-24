@@ -119,6 +119,10 @@ const OrderDetails = () => {
                             <td className="py-2 px-4 border border-gray-300">{product.name}</td>
                         </tr>
                         <tr>
+                            <td className="py-2 px-4 border border-gray-300">Product Price</td>
+                            <td className="py-2 px-4 border border-gray-300">{product.price} <span className="text-xl font-extrabold">৳</span></td>
+                        </tr>
+                        <tr>
                             <td className="py-2 px-4 border border-gray-300">Product Color</td>
                             <td className="py-2 px-4 border border-gray-300">{product.color}</td>
                         </tr>

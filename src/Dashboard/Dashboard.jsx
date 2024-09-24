@@ -73,9 +73,9 @@ const Dashboard = () => {
           <h1 className="text-md font-bold " >Add Product</h1>
           <FaArrowRight />
         </Link>
-        {/* amount route */}
-        <Link to={'/dashboard/payment'} className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
-          <h1 className="text-md font-bold" >Amount Page</h1>
+        {/* Banner Adding section */}
+        <Link to={'/dashboard/banner'} className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <h1 className="text-md font-bold" >Banner</h1>
           <FaArrowRight />
         </Link>
         {/* Order List route */}
@@ -86,6 +86,12 @@ const Dashboard = () => {
         {/* Stocks Route */}
         <Link to={'/dashboard/stock'} className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
           <h1 className="text-md font-bold" >Stock</h1>
+          <FaArrowRight />
+        </Link>
+
+        {/* amount route */}
+        <Link to={'/dashboard/payment'} className="flex items-center gap-3 bg-orange-400 rounded-md p-2">
+          <h1 className="text-md font-bold" >Sales Details</h1>
           <FaArrowRight />
         </Link>
         {/* Order List Route */}

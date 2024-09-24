@@ -17,6 +17,7 @@ import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import CheckoutAndPaymentForm from "../Pages/PaymentCheckOut/CheckoutAndPaymentForm ";
 import Update from "../Dashboard/Page/ProductStock/Update";
 import OrderDetails from "../Dashboard/Page/Orderlist/OrderDetails";
+import Banner from "../Dashboard/Page/Banner/Banner";
 // import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
             {
                 path: 'payment',
                 element: <AmountPage />
+            },
+            {
+                path: 'banner',
+                element: <Banner/>
             },
 
 
