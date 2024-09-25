@@ -19,7 +19,7 @@ const AdminBannerHome = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`http://localhost:5000/banner-delete/${id}`);
+                    await axios.delete(`https://backend-six-rosy.vercel.app/banner-delete/${id}`);
                     // Remove the deleted product from the local state
                     setBanners((prevProducts) => prevProducts.filter((product) => product._id !== id));
                     Swal.fire({

@@ -41,7 +41,7 @@ const CreateBanner = () => {
             console.log("Image URL: ", imageUrl);
 
 
-            const formResponse = await axios.post("http://localhost:5000/banner-change", {
+            const formResponse = await axios.post("https://backend-six-rosy.vercel.app/banner-change", {
                 title: formData.title,
                 description: formData.description,
                 bannerImage: imageUrl,

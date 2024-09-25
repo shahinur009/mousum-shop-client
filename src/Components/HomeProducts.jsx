@@ -7,7 +7,7 @@ const HomeProducts = () => {
     const [loading, setLoading] = useState(false)
 
     const getProducts = async () => {
-        const res = await axios.get('http://localhost:5000/show-product')
+        const res = await axios.get('https://backend-six-rosy.vercel.app/show-product')
         // console.log(res.data)
         setProduct(res?.data)
 

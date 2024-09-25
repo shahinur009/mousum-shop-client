@@ -13,7 +13,7 @@ const OrderList = () => {
   const getProducts = async (page) => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/orderList`, {
+      const res = await axios.get(`https://backend-six-rosy.vercel.app/orderList`, {
         params: {
           page: page,
           limit: itemsPerPage

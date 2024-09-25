@@ -18,7 +18,7 @@ const ProductsStock = () => {
     const getProducts = async () => {
         try {
             setLoading(true);
-            const res = await axios.get(`http://localhost:5000/stock`, {
+            const res = await axios.get(`https://backend-six-rosy.vercel.app/stock`, {
                 params: {
                     category: selectedCategory === 'All' ? '' : selectedCategory,
                     page: currentPage,
@@ -66,7 +66,7 @@ const ProductsStock = () => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(`http://localhost:5000/delete/${id}`);
+                    await axios.delete(`https://backend-six-rosy.vercel.app/delete/${id}`);
                     // Remove the deleted product from the local state
                     setProducts((prevProducts) => prevProducts.filter((product) => product._id !== id));
                     Swal.fire({

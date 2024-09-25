@@ -27,7 +27,7 @@ const Update = () => {
     useEffect(() => {
         const fetchProductData = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/stockUpdate/${id}`);
+                const response = await axios.get(`https://backend-six-rosy.vercel.app/stockUpdate/${id}`);
                 const fetchedProduct = response?.data;
                 // console.log(response)
                 if (fetchedProduct) {
@@ -86,7 +86,7 @@ const Update = () => {
                 brand,
                 model,
             };
-            const res = await axios.put(`http://localhost:5000/updateProduct/${id}`, updatedProduct);
+            const res = await axios.put(`https://backend-six-rosy.vercel.app/updateProduct/${id}`, updatedProduct);
             if (res) {
                 Swal.fire({
                     position: "top-end",

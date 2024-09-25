@@ -10,7 +10,7 @@ const SalesDetails = () => {
         e.preventDefault();
 
         // Fetch sales data based on the date range
-        const response = await axios.get(`http://localhost:5000/api/sales?start=${startDate}&end=${endDate}`);
+        const response = await axios.get(`https://backend-six-rosy.vercel.app/api/sales?start=${startDate}&end=${endDate}`);
 
         const SData = await response.data;
 

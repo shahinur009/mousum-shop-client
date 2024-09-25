@@ -31,7 +31,7 @@ const Register = () => {
                             name: data.name,
                             email: data.email,
                         }
-                        axios.post('http://localhost:5000/users', userInfo)
+                        axios.post('https://backend-six-rosy.vercel.app/users', userInfo)
                             .then(res => {
                                 if (res.data.insertedId) {
                                     console.log('user added to database')
@@ -62,7 +62,7 @@ const Register = () => {
                     email: result.user?.email,
                     name: result.user?.displayName
                 }
-                axios.post('http://localhost:5000/users', userInfo)
+                axios.post('https://backend-six-rosy.vercel.app/users', userInfo)
                     .then(res => {
                         console.log(res.data)
                         navigate('/')

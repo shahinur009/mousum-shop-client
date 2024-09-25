@@ -45,7 +45,7 @@ const AddProduct = () => {
         image: image_url,
         details, category, stock, price, color, code, brand,model
       }
-      const res = axios.post('http://localhost:5000/add-product', sendingData)
+      const res = axios.post('https://backend-six-rosy.vercel.app/add-product', sendingData)
       console.log(res)
       if (res) {
 

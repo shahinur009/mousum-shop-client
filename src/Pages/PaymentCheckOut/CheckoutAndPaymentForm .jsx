@@ -24,7 +24,7 @@ const CheckoutAndPaymentForm = () => {
 
     useEffect(() => {
         const getProduct = async () => {
-            const res = await axios.get(`http://localhost:5000/singleProduct/${id}`)
+            const res = await axios.get(`https://backend-six-rosy.vercel.app/singleProduct/${id}`)
             setSingleProduct(res.data)
         }
         getProduct();
@@ -77,7 +77,7 @@ const CheckoutAndPaymentForm = () => {
                     product: { brand, category, code, color, image, model, name, price, stock, _id }
                 };
                 console.log(paymentData)
-                const res = await axios.post('http://localhost:5000/payment', paymentData)
+                const res = await axios.post('https://backend-six-rosy.vercel.app/payment', paymentData)
                 console.log(res.data)
                 if (res) {
                     Swal.fire({

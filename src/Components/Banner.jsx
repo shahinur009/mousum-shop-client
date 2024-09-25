@@ -21,7 +21,7 @@ const Banner = () => {
     const fetchBanners = async () => {
       try {
         // Use the correct endpoint here
-        const response = await axios.get("http://localhost:5000/get-banner");
+        const response = await axios.get("https://backend-six-rosy.vercel.app/get-banner");
         setBanners(response.data);
       } catch (err) {
         setError("Failed to fetch banners");

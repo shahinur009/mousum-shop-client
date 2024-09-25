@@ -9,7 +9,7 @@ const OrderDetails = () => {
 
     const fetchDetails = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/details/${id}`);
+            const response = await axios.get(`https://backend-six-rosy.vercel.app/api/details/${id}`);
             setProductDetails(response.data);
             setLoading(false);
         } catch (error) {
@@ -25,7 +25,7 @@ const OrderDetails = () => {
     // Status change API
     const handleStatusChange = async (orderId) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/orders/${orderId}/status`);
+            const response = await axios.put(`https://backend-six-rosy.vercel.app/api/orders/${orderId}/status`);
             console.log("Order status updated:", response.data);
             // Optionally, fetch details again after updating status
             fetchDetails(); // Uncomment this line if you want to refresh the details after status change
@@ -35,7 +35,7 @@ const OrderDetails = () => {
     };
     const handleDeliveryDone = async (orderId) => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/delivery-done/${orderId}/status`);
+            const response = await axios.put(`https://backend-six-rosy.vercel.app/api/delivery-done/${orderId}/status`);
             console.log("Order status updated:", response.data);
             // Optionally, fetch details again after updating status
             fetchDetails(); // Uncomment this line if you want to refresh the details after status change
