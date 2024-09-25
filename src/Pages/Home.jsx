@@ -8,6 +8,7 @@ const Home = () => {
     return (
         <div>
             <Banner />
+            
             <Categories />
             <HomeProducts/>
             

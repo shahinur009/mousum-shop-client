@@ -15,8 +15,10 @@ import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import CheckoutAndPaymentForm from "../Pages/PaymentCheckOut/CheckoutAndPaymentForm ";
 import Update from "../Dashboard/Page/ProductStock/Update";
 import OrderDetails from "../Dashboard/Page/Orderlist/OrderDetails";
-import Banner from "../Dashboard/Page/Banner/Banner";
 import SalesDetails from "../Dashboard/Page/SalesDetails/SalesDetails";
+import AdminBannerHome from "../Dashboard/Page/Banner/AdminBannerHome";
+import CreateBanner from "../Dashboard/Page/Banner/CreateBanner";
+
 
 export const router = createBrowserRouter([
     {
@@ -88,7 +90,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'banner',
-                element: <Banner/>
+                element: <AdminBannerHome/>
+            },
+            {
+                path: 'banner/create-banner',
+                element: <CreateBanner/>
             },
 
 

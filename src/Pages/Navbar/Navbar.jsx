@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../../public/logo.png';
+import logo from '../../../public/Mousum-shop-logo.png';
 import { PiShoppingCartSimpleBold } from "react-icons/pi";
 import { FiSearch } from "react-icons/fi";  // Search icon added for input field
 import { CiSearch } from "react-icons/ci";  // Search icon for button
@@ -20,8 +20,8 @@ const Navbar = () => {
             <div className="flex items-center justify-between shadow-md bg-[#dc590d] px-4 py-2">
                 {/* Logo Section */}
                 <Link to='/' className="flex items-center justify-center">
-                    <img src={logo} alt="logo" className="w-24 h-20 bg-[#dc590d]" />
-                    <h1 className="text-white font-bold md:text-4xl">AirePro</h1>
+                    <img src={logo} alt="logo" className="w-28 h-24" />
+                    <h1 className="text-white font-bold md:text-4xl">Mousum</h1>
                 </Link>
                 <Link to='/dashboard' className="btn btn-warning">Dashboard</Link>
 

@@ -23,7 +23,7 @@ const SalesDetails = () => {
 
     return (
         <div className="flex flex-col items-center min-h-screen bg-[#F8F8EC] p-4">
-            <h1 className="text-xl md:text-3xl font-bold md:my-6 my-4 uppercase text-center">Sales Details</h1>
+            
 
             <form className="flex flex-col md:flex-row gap-4 mb-4 items-center w-full md:w-auto" onSubmit={handleSubmit}>
                 <div className="w-full md:w-auto">
